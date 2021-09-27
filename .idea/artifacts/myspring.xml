@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="myspring">
+    <output-path>$PROJECT_DIR$/out/artifacts/myspring</output-path>
+    <root id="root" />
+  </artifact>
+</component>
