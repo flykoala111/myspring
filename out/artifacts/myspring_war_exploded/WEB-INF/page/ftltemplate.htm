@@ -1,0 +1,251 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>MiniSpring</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <script src="/javaee_minispring/utils/js/jquery.min.js"></script>
+    <script src="/javaee_minispring/utils/js/config.js"></script>
+    <script src="/javaee_minispring/utils/js/skel.min.js"></script>
+    <link rel="stylesheet" href="/javaee_minispring/utils/css/skel-noscript.css"/>
+    <link rel="stylesheet" href="/javaee_minispring/utils/css/style.css"/>
+    <link rel="stylesheet" href="/javaee_minispring/utils/css/style-desktop.css"/>
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="/javaee_minispring/utils/css/ie9.css"/><![endif]-->
+    <link rel="icon" href="/javaee_minispring/utils/images/minispringicon.icon">
+    <!--[if lte IE 8]>
+    <script src="/javaee_minispring/utils/js/html5shiv.js"></script>
+    <link rel="stylesheet" href="/javaee_minispring/utils/css/ie8.css"/>
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" href="/javaee_minispring/utils/css/ie7.css"/><![endif]-->
+</head>
+<body>
+<!-- Nav -->
+<nav id="nav">
+    <ul>
+        <li><a href="#top">Introduce</a></li>
+        <li><a href="#work">Modules</a></li>
+        <li><a href="#portfolio">Functions</a></li>
+        <li><a href="#contact">Touch Me</a></li>
+
+    </ul>
+</nav>
+<!-- Home -->
+<div class="wrapper wrapper-style1 wrapper-first">
+    <article class="container" id="top">
+        <div class="row">
+            <div class="4u">
+                <span class="me image image-full">
+                    <img src="/javaee_minispring/utils/images/minispring.png" alt=""/><br/>
+                     <p align="center"><a href="/javaee_minispring/test/downloadproject?name=V0100R0001B03"
+                                          class="icon icon-download">Download</a></p>
+                </span>
+            </div>
+            <div class="8u">
+                <header>
+                    <h1>Hi. I'm <strong>MiniSpring</strong>.</h1>
+                    <h2>Version ： V0100R0001B03,Author ：Mr.fan</h2>
+                </header>
+                <p>
+                    This is a simplified version of <strong>Spring Framework</strong>, which has realized the basic
+                    functions.The functions are constantly improving.Please look forword to.
+                </p>
+                <a href="#work" class="button button-big">Learn about what I do</a>
+            </div>
+        </div>
+    </article>
+</div>
+
+<!-- Work -->
+<div class="wrapper wrapper-style2">
+    <article id="work">
+        <header>
+            <h2>Module list</h2>
+            <span>Some modules as follows</span>
+        </header>
+        <div class="container">
+        <div class="row">
+                        <div class="4u">
+                            <section class="box box-style1">
+                        <span class="me image image-centered"><img
+                                src="/myspring_war_exploded/utils/images/minispringcore.png" alt=""/></span>
+                                <h3><a href=" " target="_blank">MiniSpring Core</a></h3>
+                                <p>
+                                    MiniSpring的内核。主要包含了各种容器。比如类实例容器Ioc,路径映射器HandlerMapping，全局容器ClassNames,静态资源容器StaticResources，mapper接口，sql容器等。框架的初始化操作会将对应的数据添加到容器里，奠定了框架运作的基础
+                                </p>
+                            </section>
+                        </div>
+                        <div class="4u">
+                            <section class="box box-style1">
+                        <span class="me image image-centered"><img
+                                src="/myspring_war_exploded/utils/images/minispringjdbc.png" alt=""/></span>
+                                <h3><a href=" " target="_blank">MiniSpring Jdbc</a></h3>
+                                <p>
+                                    数据库操作模块，拥有mapper工厂和sql工厂，mapper工厂实现了对mapper接口的代理，接口代理实例会被添加到Ioc容器里。调用mapper接口时会从sql工厂里取得sql语句，通过解析和参数加载，最终实现对数据库的操作
+                                </p>
+                            </section>
+                        </div>
+                        <div class="4u">
+                            <section class="box box-style1">
+                        <span class="me image image-centered"><img
+                                src="/myspring_war_exploded/utils/images/minispringmvc.png" alt=""/></span>
+                                <h3><a href=" " target="_blank">MiniSpring Mvc</a></h3>
+                                <p>
+                                    请求接受与响应模块。包含了一个中央处理器，用于对请求的分发，中央处理器里判断请求的实静态资源或者controller里的映射，如果是静态资源，会去查找StaticResources容器，通过配置的静态资源的读取方式去读取。如果是controller里的映射，那么会通过HandlerMapping容器找到对应的方法。完成方法的反射。通过方法的返回值和方法注解判断出是视图还是数据。视图的话，最后通过html或者freemarker解析器去解析
+                                </p>
+                            </section>
+                        </div>
+                   </div>
+                        <div class="row">
+                        <div class="4u">
+                            <section class="box box-style1">
+                        <span class="me image image-centered"><img
+                                src="/myspring_war_exploded/utils/images/minispringaop.png" alt=""/></span>
+                                <h3><a href="" target="_blank">MiniSpring Aop</a></h3>
+                                <p>
+                                    切面编程。对于某一个特定的代码层去执行一套统一的操作，减少代码冗余，提高项目的扩展性。
+                                </p>
+                            </section>
+                        </div>
+                        <div class="4u">
+                            <section class="box box-style1">
+                        <span class="me image image-centered"><img
+                                src="/myspring_war_exploded/utils/images/minispringmvcinteceptor.png" alt=""/></span>
+                                <h3><a href="" target="_blank">MiniSpring MvcInteceptor</a></h3>
+                                <p>
+                                    拦截器。在访问映射方法之前对某个请求做预处理，通过处理去决定是否可以让该请求进行后续的操作。拦截是在mvc里进行的，故而称为mvcinteceptor.
+                                </p>
+                            </section>
+                        </div>
+        </div>
+            <footer>
+                <p>Learn how this framework works?</p>
+                <a href="#portfolio" class="button button-big">See some of my recent work</a>
+            </footer>
+    </article>
+</div>
+
+<!-- Portfolio -->
+<div class="wrapper wrapper-style3">
+    <article id="portfolio">
+        <header>
+            <h2>Awesome work makes happy clients.</h2>
+            <span>Project can use hierarchical coding structure.</span>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="12u">
+                </div>
+            </div>
+        <div class="row">
+                         <div class="4u">
+                             <article class="box box-style2">
+                                 <a href="/javaee_minispring/test/controllerindex" class="image image-full" target="_blank"><img
+                                         src=" /myspring_war_exploded/utils/images/controller.png"
+                                         alt=""/></a>
+                                 <h3><a href="/javaee_minispring/test/controllerindex" target="_blank">Controller</a></h3>
+                                 <p>控制器。被@Anno_fzjcontroller注解的类可被认为是控制器。控制器用于对请求的控制。里面可以通过@Anno_fzjautowired注入mapper层或者servuce层的类</p>
+                             </article>
+                         </div>
+                         <div class="4u">
+                             <article class="box box-style2">
+                                 <a href="/javaee_minispring/test/serviceindex" class="image image-full" target="_blank"><img
+                                         src="/myspring_war_exploded/utils/images/service.png"
+                                         alt=""/></a>
+                                 <h3><a href="/javaee_minispring/test/serviceindex" target="_blank">Service</a></h3>
+                                 <p>业务层。被@Anno_service注解的类可以被认为是业务类。业务层主要是对业务逻辑的处理。里面可以注入mapper层的类</p>
+                             </article>
+                         </div>
+                         <div class="4u">
+                             <article class="box box-style2">
+                                 <a href="/javaee_minispring/test/mapperindex" class="image image-full" target="_blank"><img
+                                         src="/myspring_war_exploded/utils/images/mapper.png"
+                                         alt=""/></a>
+                                 <h3><a href="/javaee_minispring/test/mapperindex" target="_blank">Mapper</a></h3>
+                                 <p>数据持久层。被@Anno_fzjmapper注解的类可以被认为是数据库接口类。该层用于对数据库的操作。可被注入到service层或者controller层</p>
+                             </article>
+                         </div>
+                    </div>
+                     <div class="row">
+                         <div class="4u">
+                             <article class="box box-style2">
+                                 <a href="/javaee_minispring/test/xmlindex" class="image image-full" target="_blank"><img
+                                         src="/myspring_war_exploded/utils/images/xml.png"
+                                         alt=""/></a>
+                                 <h3><a href="/javaee_minispring/test/xmlindex" target="_blank">Xml</a></h3>
+                                 <p>sql文件。存储了操作数据库的语句，mapper层的接口通过调用sql文件里的sql语句实现对数据库的操作</p>
+                             </article>
+                         </div>
+        </div>
+            <footer>
+                <p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
+                <a href="#contact" class="button button-big">Get in touch with me</a>
+            </footer>
+    </article>
+</div>
+
+<!-- Contact -->
+<div class="wrapper wrapper-style4">
+    <article id="contact">
+        <header>
+            <h2>Want to hire me? Get in touch!</h2>
+            <span>Ornare nulla proin odio consequat  sapien vestibulum ipsum sed lorem.</span>
+        </header>
+        <div>
+            <div class="row">
+                <div class="12u">
+                    <form method="post" action="#">
+                        <div>
+                            <div class="row half">
+                                <div class="6u">
+                                    <input type="text" name="name" id="name" placeholder="Name"/>
+                                </div>
+                                <div class="6u">
+                                    <input type="text" name="email" id="email" placeholder="Email"/>
+                                </div>
+                            </div>
+                            <div class="row half">
+                                <div class="12u">
+                                    <input type="text" name="subject" id="subject" placeholder="Subject"/>
+                                </div>
+                            </div>
+                            <div class="row half">
+                                <div class="12u">
+                                    <textarea name="message" id="message" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="12u">
+                                    <a href="#" class="button form-button-submit">Send Message</a>
+                                    <a href="#" class="button button-alt form-button-reset">Clear Form</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row row-special">
+                <div class="12u">
+                    <h3>Find me on ...</h3>
+                    <ul class="social">
+                        <li class="twitter"><a href="" class="icon icon-twitter"><span>Twitter</span></a></li>
+                        <li class="facebook"><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
+                        <li class="dribbble"><a href="" class="icon icon-dribbble"><span>Dribbble</span></a></li>
+                        <li class="linkedin"><a href="#" class="icon icon-linkedin"><span>LinkedIn</span></a></li>
+                        <li class="tumblr"><a href="#" class="icon icon-tumblr"><span>Tumblr</span></a></li>
+                        <li class="googleplus"><a href="#" class="icon icon-google-plus"><span>Google+</span></a></li>
+                        <li class="github"><a href="" class="icon icon-github"><span>Github</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p id="copyright">
+                &copy; Copyright &copy; 2020.Mr.fan All rights reserved.<a target="_blank"
+                                                                                   href="">MiniSpring</a>
+            </p>
+        </footer>
+    </article>
+</div>
+</body>
+</html>

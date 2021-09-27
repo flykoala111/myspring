@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_myspring" default="compile.module.myspring">
+  <dirname property="module.myspring.basedir" file="${ant.file.module_myspring}"/>
+  
+  <property name="module.jdk.home.myspring" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.myspring" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.myspring" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.myspring" value="-encoding UTF-8 -source 12 -target 12 ${compiler.args}"/>
+  
+  <property name="myspring.output.dir" value="undefined"/>
+  <property name="myspring.testoutput.dir" value="undefined"/>
+  
+  <path id="myspring.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="myspring.module.production.classpath">
+    <path refid="${module.jdk.classpath.myspring}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="myspring.runtime.production.module.classpath">
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="myspring.module.classpath">
+    <path refid="${module.jdk.classpath.myspring}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="myspring.runtime.module.classpath">
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.myspring">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.myspring">
+    <patternset refid="excluded.from.module.myspring"/>
+  </patternset>
+  
+  <path id="myspring.module.sourcepath">
+    <dirset dir="${module.myspring.basedir}/../../myspring">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.myspring" depends="compile.module.myspring.production,compile.module.myspring.tests" description="Compile module myspring"/>
+  
+  <target name="compile.module.myspring.production" depends="register.custom.compilers" description="Compile module myspring; production classes">
+    <mkdir dir="${myspring.output.dir}"/>
+    <javac2 destdir="${myspring.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.myspring}/javac">
+      <compilerarg line="${compiler.args.myspring}"/>
+      <bootclasspath refid="myspring.module.bootclasspath"/>
+      <classpath refid="myspring.module.production.classpath"/>
+      <src refid="myspring.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.myspring"/>
+    </javac2>
+    
+    <copy todir="${myspring.output.dir}">
+      <fileset dir="${module.myspring.basedir}/../src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.myspring.tests" depends="register.custom.compilers,compile.module.myspring.production" description="compile module myspring; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.myspring" description="cleanup module">
+    <delete dir="${myspring.output.dir}"/>
+    <delete dir="${myspring.testoutput.dir}"/>
+  </target>
+</project>
